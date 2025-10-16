@@ -11,21 +11,16 @@
     <main class="container">
         <form id="loginForm">
             <h1>Login Ju Lopes</h1>
-            
             <div class="input-box">
                 <input id="email" type="email" placeholder="Usuário">
-                <i class="bx bxs-user"></i>
             </div>
-
             <div class="input-box">
                 <input id="senha" type="password" placeholder="Senha">
-                <i class="bx bxs-lock-alt"></i>
             </div>
 
             <div class="remenber-forgot">
-                <label> 
-                    <input type="checkbox">
-                    Lembrar minha senha 
+                <label>
+                    <input type="checkbox"> Lembrar minha senha
                 </label>
                 <a href="#">Esqueci a senha</a>
             </div>
@@ -33,30 +28,28 @@
             <button type="submit" class="login">Login</button>
 
             <div class="register-link">
-                <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>   
+                <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
             </div>
         </form>
     </main>
 
-    <!-- Script -->
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
             const email = document.getElementById("email").value.trim();
             const senha = document.getElementById("senha").value.trim();
-            const btn = document.querySelector(".login");
 
             if (email === "" || senha === "") {
                 alert("Preencha todos os campos!");
                 return;
             }
 
-            // Mostra carregamento
+            const btn = document.querySelector(".login");
             btn.textContent = "Entrando...";
             btn.disabled = true;
 
-            // Simula um pequeno atraso antes do redirecionamento
+            // Simula carregamento antes de ir pro portfólio
             setTimeout(() => {
                 window.location.href = "https://portifoliodaju.vercel.app/";
             }, 1500);
